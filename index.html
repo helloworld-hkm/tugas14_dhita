@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.min.css">
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>Pertemuan 14</title>
+</head>
+
+<body>
+    <ons-navigator id="myNavigator" page="login.html" animation="fade"></ons-navigator>
+
+
+    <template id="login.html">
+      <ons-page>
+        <ons-card>
+          <div style="text-align: left; ">
+            <ons-card>
+              <center>
+                <ons-list-item style="margin-top: 10%;">
+                  <center><img src="res/jago.gif" width="100%"></center>
+                  <ons-row style="margin-top: 10%;">
+                    <ons-col>
+                      <ons-input id="username" placeholder="Masukkan Username"></ons-input>
+                    </ons-col>
+                  </ons-row>
+                </ons-list-item>
+                <ons-list-item>
+                  <ons-row>
+                    <ons-col>
+                      <ons-input type="password" id="password" placeholder="Masukkan Password "></ons-input>
+                    </ons-col>
+                  </ons-row>
+                </ons-list-item>
+              </center>
+              <center><ons-button onclick="login()" style="margin-top: 10%; margin-bottom: 50%;"
+                  width="30%">Login</ons-button></center>
+            </ons-card>
+          </div>
+        </ons-card>
+        
+      </ons-page>
+    </template>
+    <template id="homepage">
+        <ons-page>
+            <ons-splitter>
+                <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                    <ons-page>
+
+                        <ons-list>
+                            <ons-list-item onclick="fn.load('home.html')" tappable>
+                                Home
+                            </ons-list-item>
+                            <ons-list-item onclick="fn.load('menu.html')" tappable>
+                                Menu
+                            </ons-list-item>
+                            <ons-list-item onclick="fn.load('kontak.html')" tappable>
+                                Kontak Kami
+                            </ons-list-item>
+                        </ons-list>
+                    </ons-page>
+                </ons-splitter-side>
+                <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+            </ons-splitter>
+
+            <template id="home.html">
+                <ons-page>
+                    <ons-toolbar>
+                        <div class="left">
+                            <ons-toolbar-button onclick="fn.open()">
+
+                                <ons-icon icon="md-menu"></ons-icon>
+                            </ons-toolbar-button>
+                        </div>
+
+                        <div class="center">
+                            Kenzie mie
+                        </div>
+                    </ons-toolbar>
+                    <h1
+                        style="text-align: center;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ; padding-top: 20px;">
+                        Welcome to <br> Kenzie Mie
+                    </h1>
+                    <p style="text-align:justify ;margin-left: 50px;margin-right: 50px">Kenzie mie menyediakan berbagai
+                        macam menu mie ayam yang tentunya membuat kalangan remaja dan masyarakat menjadi ketagihan
+                        karena rasa yang berbeda khas dari kenzie mie tersebut. 
+                    </p>
+                    <!-- <div style="text-align: center;">
+                    <ons-button onclick="fn.load('menu.html')">Lihat Menu !</ons-button>
+                </div> -->
+                    <ons-fab position="bottom right">
+                        <ons-icon onclick="fn.load('menu.html')" icon="md-shopping-basket"></ons-icon>
+                    </ons-fab>
+                </ons-page>
+            </template>
+            <template id="kontak.html">
+                <ons-page>
+                    <ons-toolbar>
+                        <div class="left">
+                            <ons-toolbar-button onclick="fn.open()">
+                                <ons-icon icon="md-menu"></ons-icon>
+                            </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                            Kontak Kami
+                        </div>
+                    </ons-toolbar>
+                    
+                    
+                   <ons-card>
+                    <img src="res/tumb.jpg" alt="Onsen UI" style="width: 100%">
+                    <ons-row style="text-align: center;">
+                         
+                        <ons-col>
+                            <h3> Menerima Pesanan</h3>
+                            <p > info lebih lanjut bisa cek dan hubungi media
+                                sosial berikut ini</p>
+                          
+                        </ons-col>
+                    </ons-row>
+                    <ons-row style="text-align: center;">
+                         
+                        <ons-col>
+                            <ons-icon icon="md-instagram"></ons-icon>  kenziemie.id 
+                        </ons-col>
+                    </ons-row>
+                    <ons-row style="text-align: center;">
+                         
+                        <ons-col>
+                            <ons-icon icon="md-whatsapp"></ons-icon> 085741780090
+                        </ons-col>
+                    </ons-row>
+                  
+                    <ons-row style="text-align: center;">
+                         
+                        <ons-col>
+                           
+                            <p style="color: gray;" >jl ki mangunsarkoro dracik
+                                kembang rt 04/rw 01 proyonanggan selatan batang</p>
+                          
+                        </ons-col>
+                    </ons-row>
+              
+                   </ons-card>
+                   
+                </ons-page>
+            </template>
+
+            <template id="menu.html">
+                <ons-page>
+                    <ons-toolbar>
+                        <div class="left">
+                            <ons-toolbar-button onclick="fn.load('home.html')">
+                                <ons-icon icon="md-arrow-left"></ons-icon>
+                            </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                            Kenzie Mie
+                        </div>
+
+                    </ons-toolbar>
+                    <ons-tabbar id="tabbar" swipeable position="auto">
+                        <ons-tab page="menu1.html" label=" Menu" icon="md-collection-item">
+                        </ons-tab>
+                        <ons-tab page="menu2.html" label="Pemesanan" icon="md-shopping-cart-plus">
+                        </ons-tab>
+                        <ons-tab page="menu3.html" label="Detail" icon="md-info-outline">
+                        </ons-tab>
+                </ons-page>
+            </template>
+
+            <template id="menu1.html">
+                <ons-page id="Tab1">
+                    <ons-list>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/original.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Original</span><span
+                                    class="list-item__subtitle">Rp
+                                    12.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/original-ceker.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Ceker</span><span class="list-item__subtitle">Rp
+                                    14.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/original-bakso.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Bakso</span><span class="list-item__subtitle">Rp
+                                    13.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/original-bakso-ceker.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Ceker Bakso</span><span
+                                    class="list-item__subtitle">Rp
+                                    16.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/goreng.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Goreng</span><span
+                                    class="list-item__subtitle">Rp
+                                    12.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/goreng-ceker.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Goreng Ceker</span><span
+                                    class="list-item__subtitle">Rp
+                                    14.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/goreng-bakso.png">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Goreng Bakso</span><span
+                                    class="list-item__subtitle">Rp
+                                    13.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="res/goreng-ceker-bakso.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">Mie Ayam Goreng Ceker Bakso</span><span
+                                    class="list-item__subtitle">Rp
+                                    16.000,-</span>
+                            </div>
+                            <div class="right">
+
+                            </div>
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </template>
+            <template id="menu2.html">
+                <ons-page id="Tab2">
+                    <ons-card>
+                        <ons-list class="center">
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>No Pesanan </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="no_pesanan" style="color: black;"></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Nama </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="pelanggan" style="color: black;"></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Harga </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="harga"  readonly style="color: black;"></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Minuman </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-select id="minuman" onchange="toggle()">
+                                            <option value="Kosong">Tidak Dipilih</option>
+                                            <option value="Air Mineral">Air Mineral</option>
+                                            <option value="Es teh">Es Teh</option>
+                                            <option value="Teh Hangat">Teh Hangat</option>
+                                            <option value="Es Jeruk">Es Jeruk</option>
+                                        </ons-select>
+                                    </ons-col>
+                                    <ons-col style="padding-left: 2px;">
+
+                                        <ons-input id="jml_minuman" type="number" value="0"
+                                            style="color: black;display: none;" onfocusout="hitung()"
+                                            placeholder="jumlah" min="0" max="2000"></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Menu </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-select id="mie" onchange="hrg()">
+                                            <option value="kosong">-pilih menu-</option>
+                                            <option value="Mie Ayam Original">Mie Ayam Original</option>
+                                            <option value="Mie Ayam Ceker">Mie Ayam Ceker</option>
+                                            <option value="Mie Ayam Bakso">Mie Ayam Bakso</option>
+                                            <option value="Mie Ayam Ceker Bakso">Mie Ayam Ceker Bakso</option>
+                                            <option value="Mie Ayam Goreng">Mie Ayam Goreng</option>
+                                            <option value="Mie Ayam Goreng Ceker">Mie Ayam Goreng Ceker</option>
+                                            <option value="Mie Ayam Goreng Bakso">Mie Ayam Goreng Bakso</option>
+                                            <option value="Mie Ayam Goreng Bakso">Mie Ayam Goreng Bakso</option>
+
+                                        </ons-select>
+                                    </ons-col>
+                                 
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Jumlah Pesanan </label>
+                                    </ons-col>
+
+                                    <ons-col style="padding-left: 2px;">
+                                        <ons-input id="jumlah" value="" type="number" style="color: black;"
+                                            onchange="hitung()"></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Total Bayar </label>
+                                    </ons-col>
+
+                                    <ons-col style="padding-left: 2px;">
+                                        <ons-input id="total" type="number" value="" readonly
+                                            style="color: black;"></ons-input>
+
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+
+
+                        </ons-list>
+                    </ons-card>
+                    <ons-fab position="bottom right">
+                        <ons-icon icon="md-save" onclick="save()"></ons-icon>
+                    </ons-fab>
+
+                </ons-page>
+            </template>
+            <template id="menu3.html">
+                <ons-page id="Tab2">
+                    <ons-card>
+                        <ons-list class="center">
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>No Pesanan </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <span id="ket_id"></span>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Nama </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <span id="ket_nama"></span>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Pesanan </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <span id="ket_pesanan"></span>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Jumlah Pesanan </label>
+                                    </ons-col>
+
+                                    <ons-col style="padding-left: 2px;">
+                                        <span id="ket_jumlah"></span>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Minuman </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <span id="ket_minuman"></span>
+                                    </ons-col>
+
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Jumlah Minuman </label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <span id="ket_jumlah_minuman"></span>
+                                    </ons-col>
+
+                                </ons-row>
+                            </ons-list-item>
+
+                            <ons-list-item modifier="nodivider">
+                                <ons-row>
+                                    <ons-col width="30%">
+                                        <label>Total Bayar </label>
+                                    </ons-col>
+
+                                    <ons-col style="padding-left: 2px;">
+                                        <span id="ket_bayar"></span>
+
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                         
+
+
+
+
+                        </ons-list>
+                    </ons-card>
+                    <script>
+                        document.getElementById("ket_id").innerHTML = localStorage.getItem("no");
+                        document.getElementById("ket_pesanan").innerHTML = localStorage.getItem("pesanan");
+                        document.getElementById("ket_minuman").innerHTML = localStorage.getItem("minuman");
+                        document.getElementById("ket_nama").innerHTML = localStorage.getItem("pelanggan");
+                        document.getElementById("ket_jumlah").innerHTML = localStorage.getItem("jumlah_pesanan");
+                        document.getElementById("ket_jumlah_minuman").innerHTML = localStorage.getItem("jumlah_minuman");
+                        document.getElementById("ket_bayar").innerHTML = localStorage.getItem("total");
+
+
+                    </script>
+                </ons-page>
+
+            </template>
+
+
+        </ons-page>
+    </template>
+
+
+
+
+</body>
+
+</html>
